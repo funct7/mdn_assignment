@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>A responsive web page</title>
+  </head>
+
+  <body>
+    <p>
+      This is art direction:
+      <picture>
+        <source media="(max-width: 440px)" srcset="seattle_440.png">
+        <source media="(max-width: 2556px)" srcset="seattle_2556.png">
+        <source media="(min-width: 2557px)" srcset="seattle_fullsize.jpg">
+        <img src="seattle_2556.png" alt="Seattle skyline">
+      </picture>
+    </p>
+
+    <p>
+      This is a responsive image (resolution switching):
+      <img srcset="04147_babybeachsunset_1024x640.jpg 1024w,
+                   04147_babybeachsunset_1152x720.jpg 1152w,
+                   04147_babybeachsunset_1440x900.jpg 1440w,
+                   04147_babybeachsunset_2048x1280.jpg 2048w,
+                   04147_babybeachsunset_3840x2400.jpg 3840w"
+           sizes="(max-width: 1024px) 1024px,
+                  (max-width: 1152px) 1152px,
+                  (max-width: 1440px) 1440px,
+                  (max-width: 2048px) 2048px,
+                  3840px"
+           src="04147_babybeachsunset_1024x640.jpg"
+           alt="A sunset on a beach">
+    </p>
+
+  </body>
+
+</html>
