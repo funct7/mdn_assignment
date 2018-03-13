@@ -1,0 +1,148 @@
+/* General setup */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  min-width: 1000px;
+  max-width: 1400px;
+}
+
+/* Layout */
+
+section {
+  float: left;
+  width: 50%;
+}
+
+aside {
+  float: left;
+  width: 30%;
+}
+
+nav {
+  float: left;
+  width: 20%;
+}
+
+footer {
+  clear: both;
+}
+
+header, section, aside, nav, footer {
+  padding: 20px;
+}
+
+/* header and footer */
+
+header, footer {
+  border-top: 5px solid #a66;
+  border-bottom: 5px solid #a66;
+}
+
+/* WRITE YOUR CODE BELOW HERE */
+
+@font-face {
+  font-family: 'roboto-slab';
+  src: url('fonts/robotoslab-regular-webfont.woff2') format('woff2'),
+       url('fonts/robotoslab-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'crimson';
+  src: url('fonts/crimsontext-regular-webfont.woff2') format('woff2'),
+       url('fonts/crimsontext-regular-webfont.woff') format('woff');
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'roboto-slab', sans-serif;
+  line-height: 1.5;
+  word-spacing: 0.4rem;
+}
+
+header, h1, h2 {
+  font-family: 'crimson', serif;
+}
+
+header {
+  font-size: 2.4rem;
+  text-align: center;
+  letter-spacing: 0.5rem;
+}
+
+section h2 + p {
+  text-indent: 20px;
+}
+
+a {
+  outline: none;
+}
+
+a:link {
+  color: #c66;
+}
+
+a:visited {
+  color: #a66;
+}
+
+a:hover {
+  color: #009;
+  text-decoration: none;
+}
+
+a:focus {
+  color: #00F;
+  border: 1px solid orange;
+  text-decoration: none;
+}
+
+a:active {
+  border: 2px solid orange;
+  text-decoration: none;
+}
+
+a[href*='http'] {
+  padding-right: 1.2rem;
+  background-position: 100% 50%;
+  background-size: 10px 10px;
+  background-repeat: no-repeat;
+  background-image: url('external-link-52.png');
+}
+
+ul, ol {
+  line-height: 1.5;
+}
+
+li {
+  list-style-type: square;
+}
+
+nav ul {
+  padding: 0;
+}
+
+nav li {
+  list-style-type: none;
+  margin: 0.4rem;
+  text-align: center;
+}
+
+nav li a {
+  border: 1px solid #a66;
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  text-decoration: none;
+  display: block;
+}
+
+nav li a:hover {
+  color: white;
+  background-color: rgba(200, 0, 0, 0.4);
+}

@@ -74,6 +74,7 @@
     ```
     font: italic normal bold normal 3em/1.5 Helvetica, Arial, sans-serif;
     ```
+
 ### Styling Lists
 - List-specific styles
   - `list-style-type`: Sets the type of bullets to use.
@@ -90,3 +91,74 @@
   - `ol` `start` attribute: Sets the number that begins the list item
   - `ol` `reversed` attribute
   - `li` `value` attribute: Individual items can have a custom set value. The following items whose `value` attribute is not set will increment the value of the list item above by 1.
+
+### Styling Links
+- Link states
+  - Styling for certain states of links can be specified through the use of pseudo-classes:
+    - `:link`: The default state
+    - `:visited`
+    - `:hover`
+    - `:focus`: When the linked is focused using a keyboard, or programmatically focused using `HTMLElement.focus()`
+    - `:active`: The highlighted state
+  - Conventions on styling links are kept in browsers. When styling links, the style shouldn't deviate too much from the default styles.
+  - Rulesets should be defined in the order presented above to ensure correct behavior.
+  - Not setting the color for `border-bottom` makes it adopt the same color as the element's text.
+
+- Including icons
+  - You can insert images to links Using the `background` property and setting the `background-size` property to resize the image.
+  - Using attribute selectors such as `a[href*="http"]`, you can select only external links.
+
+- Styling links as buttons
+  - Lists can be used as horizontal navigation bars like so:
+
+    ```
+    ul {
+      padding: 0;      /* has padding-left by default */
+      width: 100%;
+    }
+
+    li {
+      display: inline; /* block by default */
+    }
+
+    a {
+      display: inline-block; /* `inline` doesn't allow for sizing and `block` will put each item in its own row */
+      width: 19.5%;
+      margin-right: 0.625%;  /* five anchor elements with margin on the right results in 100.625% */
+    }
+
+    li:last-child a {
+      margin-right: 0;  /* removes the extraneous right margin of the right-most item */
+    }
+
+    ```
+
+  - Whitespace is added by default when setting `display: inline;` for the `li` element. To remove this and make all `li`s touch each other, have all `li` elments written in one line; i.e. `<li>one</li><li>two</li>`.
+
+### Web Fonts
+- Using web fonts
+  - Declaration
+
+    ```
+    @font-face {
+      font-family: "myFont";
+      src: url("myFont.ttf");
+    }
+    ```
+
+  - Usage: Include the value of the `font-family` in the code above to the `font-family` property of an element.
+  - Browsers support different font formats. Most modern browsers support WOFF/WOFF2 (Web Open Font Format ver. 1 & 2). Other older browsers might support only EOT (Embedded Open Type) or require SVG versions of the font.
+
+  - Font distributors
+    - Free: [Font Squirrel](https://www.fontsquirrel.com/), [dafont](http://www.dafont.com/), [Everything Fonts](https://everythingfonts.com/)
+    - Paid: [fonts.com](http://www.fonts.com/), [myfonts.com](http://www.myfonts.com/), [Linotype](https://www.linotype.com/), [Monotype](http://www.monotype.com/), [Exljbris](http://www.exljbris.com/)
+
+  - The `bulletproof @font-face syntax`
+    - `font-family`: The identifier for the font
+    - `src`
+      - A value consists of the path to the font files to be imported (`url`) and the format of each font file (`format`). `format` is optional, but helps browsers use the font faster. Declarations are separated by commas.
+      - Multiple declarations can be listed, separated by commas. As usual, the browser will use the first one that it can find and understand, so it is better to use newer/better formats before older ones. One exception to this is the EOT fonts for older IE browsers.
+      - `font-weight`/`font-style`
+
+- Further refernce
+  - [Creating Custom Font Stacks with Unicode-Range](https://24ways.org/2011/creating-custom-font-stacks-with-unicode-range/)
