@@ -351,6 +351,7 @@
     - Margins can accept negative values.
     - Box content heights don't observe percentage lengths. They are set to the height of the box content if not set to an absolute height.
     - Borders ignore percentage width settings.
+    - The margin of two adjacent boxes is set to `max(boxA.margin, boxB.margin)`.
     - `box-sizing` property allows user to set the box size according to the external width: i.e. the left end of the border to the right end of the border.
 
   - Overflow: When the content size to too small to fit the content, `overflow` property can be set to define the behavior in such cases:

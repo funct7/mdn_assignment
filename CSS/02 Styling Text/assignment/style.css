@@ -125,6 +125,11 @@ li {
   list-style-type: square;
 }
 
+nav {
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 63vh;
+}
+
 nav ul {
   padding: 0;
 }
