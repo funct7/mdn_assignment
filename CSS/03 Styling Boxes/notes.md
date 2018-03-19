@@ -115,3 +115,49 @@
     background-repeat: no-repeat, repeat;
     ```
 
+### Borders
+- Default values for the border color and width are the color of the text and 3px respectively.
+- `border-radius`
+  - Supported in IE 9+.
+  - Shorthand example
+
+    ```
+    /* 1st value is top left and bottom right corners,
+       2nd value is top right and bottom left  */
+    border-radius: 20px 10px;
+    /* 1st value is top left corner, 2nd value is top right
+       and bottom left, 3rd value is bottom right  */
+    border-radius: 20px 10px 50px;
+    /* top left, top right, bottom right, bottom left */
+    border-radius: 20px 10px 50px 0;
+    ```
+
+  - The x-radius and the y-radius can be set separately using a slash like so:
+
+    ```
+    border-radius: 10px / 20px;
+    border-radius: 10px 30px / 20px 40px;
+    ```
+
+- `border-image`
+  - Supported in IE 11+.
+  - Border properties needs to be specified in order for the border image to appear. This is also good as a fallback.
+  - If you don't want the `background-color` property to be applied where the border image is, you might need to constraint the background like so: `background-clip: padding-box;`.
+  - `border-image-source` should be set. The `url()` function can be used as in `background-image`.
+  - `border-image-slice`
+    - The border image is sliced into 9 parts, where the corner slices are used in corners and the slide slices are repeated or stretched.
+    - One value: The image is sliced in equal sizes.
+    - Two values: Top and bottom, left and right.
+    - Three values: Top, left and right, bottom.
+    - Four values: Top, right, bottom, left.
+    - The values are interpreted as pixels for raster graphics and coordinates for vector graphics.
+    - Percentages can also be used.
+    - The center piece is discarded by default. If the center piece is needed, use the keyword `fill` in the `border-image-slice`/`border-image` value.
+  - `border-image-repeat`
+    - `stretch`
+    - `repeat`: Image fragments are not adjusted.
+    - `round`: Images are stretched slightly so that no fragments appear.
+    - `space`: Images are placed with margins in-between so that no fragments appear. Supported in Safari 9+ and IE 11+.
+  - `border-image-width`
+  - `border-image-outset`: Adds space between the border and the padding.
+  - Shorthand: `border-image: $(source) $(slice) $(repeat)`.
