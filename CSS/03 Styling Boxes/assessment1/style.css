@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #ccc;
+}
+
+article {
+  width: 210mm;
+  height: 297mm;
+  margin: 20px auto;
+  position: relative;
+}
+
+address {
+  position: absolute;
+  bottom: 8mm;
+  right: 20mm;
+}
+
+h1 {
+  position: absolute;
+  top: 12mm;
+  left: 20mm;
+  width: 128px;
+  height: 128px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 44px 0;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+/* Your CSS below here */
+
+body {
+  background-image: url('top-image.png');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: white;
+
+  border-top: 1mm solid red;
+  border-bottom: 1mm solid red;
+}
+
+body {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), transparent 15%),
+                    url('top-image.png'),
+                    linear-gradient(to top, rgba(0, 0, 0, 0.2), transparent 15%),
+                    url('bottom-image.png');
+  background-position: center top,
+                       center top,
+                       center bottom,
+                       center bottom;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+}
+
+h1 {
+  background-image: url('logo.png');
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  /*border: 10px solid red;*/
+}

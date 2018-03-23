@@ -84,7 +84,7 @@
       - You can specify as many color stops as you like.
       - Other units can be used to specify stop locations.
 
-    - Repoeated gradients example
+    - Repeated gradients example
 
     ```
     background-image: repeating-linear-gradient(to right, yellow, orange 25px, yellow 50px);
@@ -161,3 +161,48 @@
   - `border-image-width`
   - `border-image-outset`: Adds space between the border and the padding.
   - Shorthand: `border-image: $(source) $(slice) $(repeat)`.
+
+### Tables
+- Best practice
+  - Make the table markup as simple as possible and flexible, e.g. by using relative units.
+  - `table-layout: fixed;`: This allows for better control over the table by sizing each column according to the heading; i.e. `width` properties of `<th>` elements. [Link](https://css-tricks.com/fixing-tables-long-strings/)
+  - `border-collapse: collapse;`: Removes the margin outside of each cell border.
+  - Use `<thead>`, `<tbody>`, and `<tfoot>` to break up the table, allowing for finer customization.
+
+### Advanced Box Effects
+- Box shadows
+  - `box-shadow` is available in IE 9+.
+  - Shorthand: `box-shadow: $(h_offset) $(v_offset) $(blur_radius) $(base_color);`
+  - Multiple shadows can be cast on a single box by providing multiple comma-separated `box-shadow` values.
+  - The `inset` keyword: Putting this at the start of a shadow declaration causes it to become an inner shadow.
+  - `spread radius` causes the shadow to become bigger than the original box.
+
+### Filters
+- Filters can be applied to any element, block, or inline.
+- The `drop-shadow()` function casts shadow on the content inside the box as well as the border.
+- Filters are not supported in IE.
+- Some browsers may require a vendor-prefixed version of filter; i.e. `-webkit-filter:`.
+
+### Blend mode
+- Two properties use blend modes
+  - `background-blend-mode` blends together multiple background images and colors set on a single element.
+  - `mix-blend-mode` blends together both background and content the element it is set on with elements it is overlapping.
+- Blend modes are not supported by Edge and only partially supported by Safari.
+
+- `webkit-background-clip: text;`
+  - Example
+  
+    ```
+    .text-clip {
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    ```
+
+  - Vendor-prefixed properties are *NOT* the standard.
+
+
+
+
+
+

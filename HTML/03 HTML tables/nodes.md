@@ -54,7 +54,7 @@
   - Accessibility
     - Adding row and column headers (`<th>`) helps visuallly impaired users make sense of the table
     - The `scope` attribute:
-      - Can Be added to the `<th>` element to specify whether the header is for a column or a row
+      - Can be added to the `<th>` element to specify whether the header is for a column or a row
       - `colgroup`/`rowgroup`: Used for headings that group other headings
     - The `id`/`headers` attributes
       - By assigning `id` attribute to `<th>` elements and specifying `headers` for the `<td>` elements, each cell of the table can be identified by what headers they are under
