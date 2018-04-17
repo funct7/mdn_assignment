@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>CSS tables example</title>
+  <style>
+  html {
+    font-family: sans-serif;
+  }
+
+  form p {
+    color: #999;
+    font-style: italic;
+    grid-column: auto / span 12;
+  }
+
+  form {
+    display: grid;
+    width: 40%;
+    margin: 0 auto;
+    grid-template-columns: repeat(10, 1fr);
+    grid-column-gap: 12px;
+    grid-row-gap: 10px;
+  }
+
+  form label {
+    grid-column: 3 / 5;
+  }
+
+  form label:nth-of-type(3) {
+    grid-column: 4 / 5;
+  }
+
+  form input {
+    grid-column: auto / span 7;
+  }
+  
+</style>
+</head>
+<body>
+  <form>
+    <label for="fname">First name:</label>
+    <input type="text" id="fname">
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname">
+    <label for="age">Age:</label>
+    <input type="text" id="age">
+    <p>First of all, tell us your name and age.</p>
+  </form>
+</body>
+</html>

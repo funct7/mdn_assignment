@@ -109,6 +109,7 @@
   - Positioned elements later in the source order are on top of earlier elements.
   - Override using `z-index: $(unitless-value);`
 
+
 ### Flexbox
 - Difficult layouts without `flexbox`:
   - Vertically centering a block of content inside its parent
@@ -164,3 +165,57 @@
   - The default value of `order` is `0`, so setting only one item to `1` will place it in the last position.
   - Flex items with the same order value appear in their source order.
   - Negative values are also possible.
+
+
+### Grids
+- Creating Simple Grid Frameworks
+  - [Worked example](./simple-grid.html)
+  - [Creating a fluid grid](./fluid-grid.html)
+  - Using the `calc()` function
+
+    ```
+    .col.span4 {
+      width: calc((6.25% * 4) + (2.08333333% * 3));
+    }
+    ```
+
+  - Limitations
+    - Calculation has to be accurate.
+    - Overflowing width of columns will result in making a new row and break the grid layout.
+    - If the content of the elements overflow, they will become messy.
+    - Manipulating height is difficult.
+
+- Using `flexbox` is somewhat easier, but in order to span multiple columns, classes need to be set, or else they will be of equal widths.
+- Using `float` or `flexbox` leads to limitations because they are one-dimensional.
+
+- CSS Grid
+  - A simple example
+
+    ```
+    .wrapper {
+      width: 90%;
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-gap: 20px;
+    }
+    ```
+
+    - `display: grid;` declares a grid
+    - `grid-gap: 20px` sets the gutter to `20px`
+    - `grid-template-columns` creates 120 equal-width columns
+    - The `fr` unit: the fraction unit
+
+  - Multiple columns
+    - Use the `grid-column` property like so:
+
+    ```
+    .span6 { grid-column: auto / span 6; }
+    .content { grid-column: 2 / 8; }        // Sets grid columns starting from position 2 to 8
+    ```
+
+    - `grid-column: $start_col / span $num_col;`
+
+  - CSS grids are two-dimensional, so even when various columns have various height, columns will adjust their height to the height of the tallest container.
+  - The `grid-gap` property eliminates the use of hacks such as setting margins.
