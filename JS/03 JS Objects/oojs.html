@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Object-oriented JavaScript example</title>
+  </head>
+
+  <body>
+    <p>This example requires you to enter commands in your browser's JavaScript console (see <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">What are browser developer tools</a> for more information).</p>
+
+  </body>
+
+    <script>
+    // function Person(name) {
+    //   this.name = name;
+    //   this.greeting = function() { alert('Hi! I\'m ' + this.name + '.'); };
+    // }
+    
+    // function Alt(name) {
+    //   this.xyzxyz = name;
+    //   return this;
+    // }
+
+    // function Alt2(name) {
+    //   nnnname = name;
+    //   return this;
+    // }
+    function Person(first, last, age, gender, interests) {
+      this.name = {
+        'first': first,
+        'last' : last
+      };
+      this.age = age;
+      this.gender = gender;
+      this.interests = interests;
+      this.bio = function() {
+        var pronoun = gender == 'male' ? 'He' : 'She';
+        var list = '';
+        
+        for (var i = 0; i < this.interests.length; i++) {
+          if (i > 0) {
+            if (i == this.interests.length-1) {
+              list += ', and ';
+            } else {
+              list += ', ';
+            }
+          }
+          
+          list += this.interests[i];
+        }
+
+        alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. ' + 
+              pronoun + ' likes ' + list + '.');
+      };
+      this.greeting = function() {
+        alert('Hi! I\'m ' + this.name.first + '.');
+      };
+    }
+
+    function Car(wheels, doors, honk) {
+      this.wheels = wheels;
+      this.doors = doors;
+      this.honk = function() { alert(honk); };
+    }
+
+    var person1 = new Person('Bob', 'Smith', 32, 'male', ['music', 'skiing']);
+
+    Person.prototype.farewell = function() {
+      alert(this.name.first + ' has left the building. Bye for now!');
+    };
+    </script>
+</html>

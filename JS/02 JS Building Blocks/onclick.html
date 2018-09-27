@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Onclick div</title>
+    <style>
+    body {
+      font-size: 10px;
+    }
+    .container {
+      margin: 0 auto;
+      font-size: 0;
+    }
+    .box {
+      display: inline-block;
+      background-color: red;
+      width: 25%;
+      height: 5rem;
+    }
+    form {
+      font-size: 1.0rem;
+    }
+    form + p {
+      font-size: 1.0rem;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box"></div><!--
+   --><div class="box"></div><!--
+   --><div class="box"></div><!--
+   --><div class="box"></div><!--
+   
+   --><div class="box"></div><!--
+   --><div class="box"></div><!--
+   --><div class="box"></div><!--
+   --><div class="box"></div><!--
+
+   --><div class="box"></div><!--
+   --><div class="box"></div><!--
+   --><div class="box"></div><!--
+   --><div class="box"></div><!--
+
+   --><div class="box"></div><!--
+   --><div class="box"></div><!--
+   --><div class="box"></div><!--
+   --><div class="box"></div>
+    </div>
+
+    <form>
+      <div>
+        <label for="fname">First name: </label>
+        <input id="fname" type="text">
+      </div>
+      <div>
+        <label for="lname">Last name: </label>
+        <input id="lname" type="text">
+      </div>
+      <div>
+       <input id="submit" type="submit">
+     </div>
+    </form>
+    <p></p>
+
+  </body>
+  <script>
+    const boxArray = document.getElementsByClassName('box');
+    for (let i = 0; i < boxArray.length; i++) {
+      let box = boxArray[i]
+      box.onclick = function() { 
+        var r = Math.floor(Math.random() * 255),
+            g = Math.floor(Math.random() * 255),
+            b = Math.floor(Math.random() * 255);
+        box.style.backgroundColor = 'rgb(' + r + ', ' + g + ', ' + b + ')';
+      };
+    }
+
+    const form   = document.querySelector('form'),
+          fname  = document.getElementById('fname'),
+          lname  = document.getElementById('lname'),
+          submit = document.getElementById('submit'),
+          para   = document.querySelector('p');
+
+    form.onsubmit = function(e) {
+      let input1 = fname.value,
+          input2 = lname.value;
+      if (input1 === '' || input2 === '') {
+        e.preventDefault();
+        para.textContent = 'Invalid names';
+      } else {
+        para.textContent = input1 + ' ' + input2;
+      }
+    }
+  </script>
+</html>

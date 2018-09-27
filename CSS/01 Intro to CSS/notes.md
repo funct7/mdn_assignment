@@ -279,7 +279,7 @@
 
       - Example
 
-        ```
+        ```css
         /* specificity: 0101 */
         #outer a {
           background-color: red;
@@ -314,6 +314,7 @@
         div div .nav:nth-child(2) a:hover {
           border: 10px double black;
         }
+
         ```
     - Source order: Ties are broken according to appearance order in the source code
 
