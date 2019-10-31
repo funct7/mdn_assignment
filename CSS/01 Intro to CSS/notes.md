@@ -2,7 +2,7 @@
 
 ### CSS
   - CSS is a language for specifying how documents are presented to users
-  - Document: usually a text file structured using a markup language; e.g. HTML, SVG, HTML
+  - Document: usually a text file structured using a markup language; e.g. HTML, SVG, XML
   - CSS Rules
     - Properties: Human-readable identifiers indicating which features are to be changed (e.g. `background-color`)
     - Values: Values for properties tell how the stylistic features are to be applied. (e.g. `yellow`)
@@ -193,7 +193,7 @@
         - The most common relative unit
         - `1em` is the same as the font-size of the current element--the width of a capital letter M.
         - The default base `font-size` given to web pages by web browsers before CSS styling is applied is 16 pixels. However, font sizes are inherited from parent elements.
-      - `ex`, `ch`: Repectively, the height of a lowercase x, and the width of number 0. Not supported well.
+      - `ex`, `ch`: Respectively, the height of a lowercase x, and the width of number 0. Not supported well.
       - `rem`: Root `em`. Always equal the size of the default base `font-size`.
       - `vw`, `vh`: 1/100th or the viewport width and height respectively. Not as widely supported as `rem`s.
     - Unitless values
@@ -209,7 +209,7 @@
 
   - Colors
     - Keywords: 165 different keywords for colors
-    - Hexadecimal values: #value
+    - Hexadecimal values: `#value`
     - RGB: Uses the `rgb()` function
     - HSL: Hue, saturation, and lightness. Uses the `hsl()` function.
       - Hue: 0-360. The value is in degrees.
@@ -261,7 +261,7 @@
       - Conflicting declarations will be applied in the following order:
         1. Declarations in user agent style sheets (e.g. the browser's default styles, used when no other styling is set)
         2. Normal declarations in user style sheets (custom styles set by a user)
-        3. Normal declarations in authour style sheets (set by web developers)
+        3. Normal declarations in author style sheets (set by web developers)
         4. Important declarations in author style sheets
         5. Important declarations in user style sheets
 
@@ -333,7 +333,7 @@
       - The width and height of the content box. 
       - Content includes both text content and other representing child elements.
     - `padding`
-      - The inner margin of a CSS box.
+      - The inner space (inset) of a CSS box.
       - Padding can be set at once with the `padding` shorthand property or individually with `padding-top`, `padding-right`, `padding-bottom`, and `padding-left` properties.
     - `border`
       - The border of a CSS box spans from the outer edge of padding and the inner edge of the margin.
@@ -345,14 +345,13 @@
       - The shorthand `margin` and `margin-top`, `margin-right`, `margin-bottom`, and `margin-left` are possible.
 
   - Note on box properties
-    - When two adjacent margins have a different value, only the bigger value is observed. The smaller margin is collapsed.
+    - When two adjacent margins have a different value, only the bigger value is observed. The smaller margin is collapsed; i.e. `margin = max(boxA.margin, boxB.margin)`
     - When `margin`, `padding`, and/or `border` properties are set, the content area is decreased.
     - The default content `width` is set to 100% of the available space after the `margin`, `border`, and `padding` have been set.
     - The percentage value of `padding` or `margin` is relative to the containing element's value.
     - Margins can accept negative values.
     - Box content heights don't observe percentage lengths. They are set to the height of the box content if not set to an absolute height.
     - Borders ignore percentage width settings.
-    - The margin of two adjacent boxes is set to `max(boxA.margin, boxB.margin)`.
     - `box-sizing` property allows user to set the box size according to the external width: i.e. the left end of the border to the right end of the border.
 
   - Overflow: When the content size to too small to fit the content, `overflow` property can be set to define the behavior in such cases:
