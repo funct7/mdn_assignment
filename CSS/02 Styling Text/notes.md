@@ -10,7 +10,7 @@
   - `font-family`: The browser will apply a font if it is available on the machine running the browser. If not, it will just use its default font.
   - Web safe fonts
     - A certain number of fonts that are generally available across all systems
-    - cssfontstack.com[https://cssfontstack.com] maintains a list of web safe fonts
+    - [cssfontstack.com](https://cssfontstack.com) maintains a list of web safe fonts
   - Default fonts
     - `serif`, `sans-serif`, `monospace`, `cursive`, and `fantasy`
   - Font stacks
@@ -50,7 +50,7 @@
 
   - `text-shadow`
     
-    ```
+    ```css
     text-shadow: 4px 4px 5px red;
     ```
 
@@ -74,6 +74,13 @@
     ```
     font: italic normal bold normal 3em/1.5 Helvetica, Arial, sans-serif;
     ```
+
+### Writing modes
+- Block and inline is tied to the writing mode of the document and not the physical screen.
+- Logical properties and values
+  - `width` and `height` properties are based on the horizontal text flow.
+  - `inline-size` and `block-size` refer to the size based on the text flow direction.
+  - Other similar properties include `margin-block-start` as opposed to `margin-top`, `padding-inline-start` for `padding-left`, and so on.
 
 ### Styling Lists
 - List-specific styles
@@ -111,7 +118,7 @@
 - Styling links as buttons
   - Lists can be used as horizontal navigation bars like so:
 
-    ```
+    ```css
     ul {
       padding: 0;      /* has padding-left by default */
       width: 100%;

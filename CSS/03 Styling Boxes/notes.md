@@ -4,15 +4,16 @@
 - Width and height constraints
   - Maximum and minimum width constraints can be set like so:
 
-    ```
+    ```css
     width: 70%;
     max-width: 1280px;
     min-width: 480px;
     ```
+    - When using percentage with `margin` and/or `padding`, it's the fraction of the containing block element. If one percentage value is specified only, the `width` of the containing block is used.
 
   - The container can be centered by adding the following:
 
-    ```
+    ```css
     margin: 0 auto;
     ```
 
@@ -70,7 +71,7 @@
   - Linear and radial gradients are available
   - Linear gradient example
     
-    ```
+    ```css
     background-image: linear-gradient(`direction`, `begin_color`, `end_color`);
     ```
     - Direction
@@ -78,7 +79,7 @@
       - Degreee values: `90deg`, `0deg`, etc.
     - Color stops example
 
-    ```
+    ```css
     background-image: linear-gradient(to bottom, yellow, orange 40%, yellow);
     ```
       - You can specify as many color stops as you like.
@@ -86,7 +87,7 @@
 
     - Repeated gradients example
 
-    ```
+    ```css
     background-image: repeating-linear-gradient(to right, yellow, orange 25px, yellow 50px);
     ```
 
@@ -100,7 +101,7 @@
   - Since IE9 multiple backgrounds are supported.
   - Background definitions are separated with commas like so:
 
-    ```
+    ```css
     background: url(image.png) no-repeat 99% center,
                 url(background-tile.png),
                 linear-gradient(to bottom, yellow, #dddd00 50%, orange);
@@ -110,7 +111,7 @@
   - Multiple backgrounds are stacked on top of each other, with the first definition appearing at the top.
   - Multiple values can be placed into longhand `background-*` properties like so:
 
-    ```
+    ```css
     background-image: url(image.png), url(background-tile.png);
     background-repeat: no-repeat, repeat;
     ```
@@ -121,7 +122,7 @@
   - Supported in IE 9+.
   - Shorthand example
 
-    ```
+    ```css
     /* 1st value is top left and bottom right corners,
        2nd value is top right and bottom left  */
     border-radius: 20px 10px;
@@ -134,7 +135,7 @@
 
   - The x-radius and the y-radius can be set separately using a slash like so:
 
-    ```
+    ```css
     border-radius: 10px / 20px;
     border-radius: 10px 30px / 20px 40px;
     ```
@@ -192,7 +193,7 @@
 - `webkit-background-clip: text;`
   - Example
   
-    ```
+    ```css
     .text-clip {
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
