@@ -115,14 +115,16 @@
 - Shorthand: Some properties allow you to set them all in one line. The following two blocks of declaration are the same.
 
   ```css
-  padding: 10px 15px 15px 5px;
+  .foo { padding: 10px 15px 15px 5px; }
   ```
 
   ```css
-  padding-top: 10px;
-  padding-right: 15px;
-  padding-bottom: 15px;
-  padding-left: 5px;
+  .foo {
+    padding-top: 10px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 5px;
+  }
   ```
 
 ### Selector
@@ -256,23 +258,12 @@
 
     - Example
 
+      ```html
+      <p class="better"> This is a paragraph.</p>
+      <p class="better" id="winning"> One selector to rule them all!</p>
+      ```
       ```css
-      <p
-        class="better"
-        > This
-        is
-        a
-        paragraph.</p
-        > <p
-        class="better"
-        id="winning"
-        > One
-        selector
-        to
-        rule
-        them
-        all!</p
-        > #winning {
+      #winning {
         background-color: red;
         border: 1px solid black;
       }

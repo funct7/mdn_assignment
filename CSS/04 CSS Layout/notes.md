@@ -89,7 +89,7 @@
   - `position: relative;` able to tweak the final position in conjunction with `top`, `bottom`, `left`, and `right`.
      - Example
 
-      ```
+      ```css
       .positioned {
         position: relative;
         top: 30px;
@@ -173,7 +173,7 @@
   - [Creating a fluid grid](./fluid-grid.html)
   - Using the `calc()` function
 
-    ```
+    ```css
     .col.span4 {
       width: calc((6.25% * 4) + (2.08333333% * 3));
     }
@@ -191,7 +191,7 @@
 - CSS Grid
   - A simple example
 
-    ```
+    ```css
     .wrapper {
       width: 90%;
       max-width: 960px;
@@ -210,7 +210,7 @@
   - Multiple columns
     - Use the `grid-column` property like so:
 
-    ```
+    ```css
     .span6 { grid-column: auto / span 6; }
     .content { grid-column: 2 / 8; }        // Sets grid columns starting from position 2 to 8
     ```

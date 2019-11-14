@@ -51,7 +51,7 @@
   - `text-shadow`
     
     ```css
-    text-shadow: 4px 4px 5px red;
+    .foo { text-shadow: 4px 4px 5px red; }
     ```
 
     - 1st property: Required. The horizontal offset of the shadow from the original text. Usually in `px`.
@@ -71,8 +71,8 @@
   - Only `font-size` and `font-family` are required.
   - A slash has to be put in between the `font-size` and `line-height` properties.
 
-    ```
-    font: italic normal bold normal 3em/1.5 Helvetica, Arial, sans-serif;
+    ```css
+    .foo { font: italic normal bold normal 3em/1.5 Helvetica, Arial, sans-serif; }
     ```
 
 ### Writing modes
@@ -146,7 +146,7 @@
 - Using web fonts
   - Declaration
 
-    ```
+    ```css
     @font-face {
       font-family: "myFont";
       src: url("myFont.ttf");
