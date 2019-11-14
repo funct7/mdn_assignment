@@ -5,16 +5,18 @@
   - Maximum and minimum width constraints can be set like so:
 
     ```css
-    width: 70%;
-    max-width: 1280px;
-    min-width: 480px;
+    .some-class {
+      width: 70%;
+      max-width: 1280px;
+      min-width: 480px;
+    }
     ```
     - When using percentage with `margin` and/or `padding`, it's the fraction of the containing block element. If one percentage value is specified only, the `width` of the containing block is used.
 
   - The container can be centered by adding the following:
 
     ```css
-    margin: 0 auto;
+    .foo { margin: 0 auto; }
     ```
 
   - This technique can be used on media to constrain sizes.
@@ -72,7 +74,7 @@
   - Linear gradient example
     
     ```css
-    background-image: linear-gradient(`direction`, `begin_color`, `end_color`);
+    .foo { background-image: linear-gradient(`direction`, `begin_color`, `end_color`); }
     ```
     - Direction
       - Keywords: `to bottom`, `to right`, `to bottom right`, etc.
@@ -80,7 +82,7 @@
     - Color stops example
 
     ```css
-    background-image: linear-gradient(to bottom, yellow, orange 40%, yellow);
+    .foo { background-image: linear-gradient(to bottom, yellow, orange 40%, yellow); }
     ```
       - You can specify as many color stops as you like.
       - Other units can be used to specify stop locations.
@@ -88,7 +90,7 @@
     - Repeated gradients example
 
     ```css
-    background-image: repeating-linear-gradient(to right, yellow, orange 25px, yellow 50px);
+    .foo { background-image: repeating-linear-gradient(to right, yellow, orange 25px, yellow 50px); }
     ```
 
 - `background-attachment`
@@ -102,18 +104,22 @@
   - Background definitions are separated with commas like so:
 
     ```css
-    background: url(image.png) no-repeat 99% center,
-                url(background-tile.png),
-                linear-gradient(to bottom, yellow, #dddd00 50%, orange);
-    background-color: yellow;  /* fallback background color */
+    .foo {
+      background: url(image.png) no-repeat 99% center,
+                  url(background-tile.png),
+                  linear-gradient(to bottom, yellow, #dddd00 50%, orange);
+      background-color: yellow;  /* fallback background color */
+    }
     ```
 
   - Multiple backgrounds are stacked on top of each other, with the first definition appearing at the top.
   - Multiple values can be placed into longhand `background-*` properties like so:
 
     ```css
-    background-image: url(image.png), url(background-tile.png);
-    background-repeat: no-repeat, repeat;
+    .foo {
+      background-image: url(image.png), url(background-tile.png);
+      background-repeat: no-repeat, repeat;
+    }
     ```
 
 ### Borders
@@ -123,21 +129,25 @@
   - Shorthand example
 
     ```css
-    /* 1st value is top left and bottom right corners,
-       2nd value is top right and bottom left  */
-    border-radius: 20px 10px;
-    /* 1st value is top left corner, 2nd value is top right
-       and bottom left, 3rd value is bottom right  */
-    border-radius: 20px 10px 50px;
-    /* top left, top right, bottom right, bottom left */
-    border-radius: 20px 10px 50px 0;
+    .foo {
+      /* 1st value is top left and bottom right corners,
+        2nd value is top right and bottom left  */
+      border-radius: 20px 10px;
+      /* 1st value is top left corner, 2nd value is top right
+        and bottom left, 3rd value is bottom right  */
+      border-radius: 20px 10px 50px;
+      /* top left, top right, bottom right, bottom left */
+      border-radius: 20px 10px 50px 0;
+    }
     ```
 
   - The x-radius and the y-radius can be set separately using a slash like so:
 
     ```css
-    border-radius: 10px / 20px;
-    border-radius: 10px 30px / 20px 40px;
+    .foo {
+      border-radius: 10px / 20px;
+      border-radius: 10px 30px / 20px 40px;
+    }    
     ```
 
 - `border-image`
