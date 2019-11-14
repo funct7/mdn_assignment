@@ -97,13 +97,22 @@
       }
       ```
 
-  - `position: absolute;` puts the element in a layer of its own that aren't affected by other elements. The specified values for `top`, `bottom`, `left`, and `right` are relative to the element's containing element.
+  - `position: absolute;` puts the element in a layer of its own that aren't affected by other elements. The specified values for `top`, `bottom`, `left`, and `right` are *relative to the element's containing element*.
   - `position: fixed;` fixes an element in place relative to the viewport.
-  - `position: sticky;` works like a relative positioned element until it reaches a certain point from which point the element will work like fixed; i.e. UITableView header like behavior. Not widely supported.
+  - `position: sticky;` works like a `relative` positioned element until it reaches a certain point from which point the element will work `like` fixed; i.e. UITableView header like behavior. Relatively new.
 
 - Context
   - The positioned element is nested inside the `<body>` element, but by default the containing element is the `<html>` element.
-  - Positioning context: The containing element
+  - Positioning context: Which element is the "containing element" of an absolutely positioned element?
+    - Default
+      - That is, when all ancestor elements have `static` position. (no ancestor has its `position` set)
+      - The absolutely positioned element will be contained in the **initial containing block**.
+        - Has the dimensions of the viewport.
+        - Contains the `<html>` element.
+        - Therefore, the absolutely positioned element sits outside of the `<html>` element.
+    - Changing the positioning context
+      - The **positioning context**--which is where the absolutely positioned element is positioned relative to--can be set by setting the `position` of one of the element's ancestors.
+
 
 - Z-index
   - Positioned elements later in the source order are on top of earlier elements.
