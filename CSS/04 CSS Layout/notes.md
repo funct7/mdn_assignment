@@ -150,6 +150,15 @@
   - Setting `flex: $(size)px` means each flex item will be at least that much wide/tall.
   - A unitless proportion value could be given like so: `flex: 1;`
   - Giving a minimum size value with a proportion value sets each flex item to the given minimum size first, and shares the remaining space according to the proportion value.
+    ```css
+    article {
+      flex: 1 200px;
+    }
+    
+    article:nth-of-type(3) {
+      flex: 2 200px
+    }
+    ```
 
   - Longhand version
     - `flex-grow` takes the unitless proportion value.
